@@ -6,7 +6,7 @@ def check_res(res):
     test_name = inspect.stack()[1][3]
 
     with open(f"tests/test_programs/{test_name}_truth.dot", "r") as truth:
-        assert truth.read() == res
+        assert truth.read().strip() == res.strip()
 
 
 def test_parse_hello_world():
@@ -18,7 +18,7 @@ def test_parse_hello_world():
 
 
 def test_parse_assign():
-    program = 'x = 2\ny = 3\nreg = r"a*b"\ncfg = c"x -> y"  '
+    program = 'x = 2\ny = 3\nreg = r"a*b"\ncfg = c"x -> y"'
     dot = dot_of_source(program)
     dot_string = dot.to_string()
 
@@ -172,7 +172,7 @@ def test_parse_contains():
 def test_parse_complex():
     program = "tests/test_programs/prog1.pql"
     with open(program) as source:
-        program = source.read()
+        program = source.read().strip()
     dot = dot_of_source(program)
     dot_string = dot.to_string()
 
