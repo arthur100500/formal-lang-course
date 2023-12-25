@@ -4,7 +4,7 @@ program: (statement NEWLINE*)+;
 
 statement: VARNAME EQUALS expr | 'print' LPAR expr RPAR;
 
-expr: 
+expr:
     VARNAME
     | INT
     | STR
@@ -31,7 +31,7 @@ expr:
     | expr DOT CONCAT LPAR expr RPAR
     | expr DOT UNION LPAR expr RPAR
     | expr CL_STAR
-    | LCBR expr (COMMA expr)* RCBR 
+    | LCBR expr (COMMA expr)* RCBR
     ;
 
 pattern:
@@ -82,4 +82,3 @@ LPAR : '(';
 RPAR : ')';
 LCBR : '{';
 RCBR : '}';
-

@@ -152,5 +152,3 @@ tests/generated/*
 # Parsers generated
 project/parser/QueryLanguage*
 !project/parser/QueryLanguage.g4
-
-
